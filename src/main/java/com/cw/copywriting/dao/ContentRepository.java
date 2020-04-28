@@ -14,8 +14,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ContentRepository extends JpaRepository<ContentBean, Long> {
 
-    @Query(value = "SELECT DISTINCT c.* FROM content c "
-            + "where c.id in (SELECT lcr.content_id from label_content_rel lcr where lcr.label_id = 1 or c.content LIKE '%:like%'' LIMIT 0, 10")
-    ContentBean findList(@Param("like")String like);
+    // @Query(value = "SELECT DISTINCT c.* FROM content c "
+    //         + "where c.id in (SELECT lcr.content_id from label_content_rel lcr where lcr.label_id = 1 or c.content LIKE '%:like%'' LIMIT 0, 10")
+    // ContentBean findList(@Param("like")String like);
 
 }

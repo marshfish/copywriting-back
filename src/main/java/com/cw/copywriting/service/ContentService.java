@@ -65,8 +65,8 @@ public class ContentService {
         ContentBean contentBean = new ContentBean();
         contentBean.setContent(content.getContent());
         if (labelBean != null) {
-            ContentBean list = contentRepository.findList("condition");
-            return Response.of(list);
+            // ContentBean list = contentRepository.findList("condition");
+            // return Response.of(list);
         }
 
         return null;
