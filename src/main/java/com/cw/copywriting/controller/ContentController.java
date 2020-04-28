@@ -23,14 +23,17 @@ public class ContentController {
 
     @GetMapping(value = "/add")
     public Response<?> add(@RequestBody ContentDto content) {
-        contentService.addWA(content);
+        try {
+            contentService.addWA(content);
+        } catch (RuntimeException e) {
+            return Response.fail(e.getMessage());
+        }
         return Response.success();
     }
 
     @GetMapping(value = "/list")
     public Response<?> list(@RequestBody ContentDto content) {
-        //todo 
-        contentService.addWA(content);
-        return Response.success();
+
+        return contentService.list(content);
     }
 }

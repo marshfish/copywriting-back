@@ -1,13 +1,6 @@
 package com.cw.copywriting.bean;
 
-import lombok.Data;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * @auther Liao ziyang
@@ -15,7 +8,6 @@ import javax.persistence.Table;
  * @desc
  */
 @Entity
-@Data
 @Table(name = "label_content_rel")
 public class LabelContentRelBean {
 
@@ -28,4 +20,28 @@ public class LabelContentRelBean {
 
     @Column(name = "label_id")
     private int label_id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getContentId() {
+        return contentId;
+    }
+
+    public void setContentId(int contentId) {
+        this.contentId = contentId;
+    }
+
+    public int getLabel_id() {
+        return label_id;
+    }
+
+    public void setLabel_id(int label_id) {
+        this.label_id = label_id;
+    }
 }
