@@ -6,13 +6,13 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class Response<T> {
-    private final Integer code;
-    private final String msg;
-    private final T data;
+    private final Integer code = 200;
+    private final String msg = "success";
+    private final T data = null;
 
 
     private Response(T data2) {
-        this(200, "success", data2);
+        this.of(200, "success", data2);
     }
 
     public static <T> Response<T> of(T data) {
@@ -30,5 +30,19 @@ public class Response<T> {
     public static <T>Response<T> success(){
         return new Response<>(null);
     }
-    
+    public static <T>Response<T> fail(String msg){
+        return new Response<>(0, msg);
+    }
+
+    public Integer getCode() {
+        return code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public T getData() {
+        return data;
+    }
 }
