@@ -33,7 +33,7 @@ public class ContentController {
 
     @GetMapping(value = "/list")
     public Response<?> list(@RequestBody ContentDto content) {
-
+        
         return contentService.list(content);
     }
 }
